@@ -60,7 +60,10 @@ export default function PageNav() {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
   }
-
+  function HandleLogoClick() {
+    setMenuOpen(false);
+    window.scrollTo(0, 0);
+  }
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -71,7 +74,7 @@ export default function PageNav() {
     >
       <div className="customContainer h-20 md:h-26 flex items-center justify-between">
         {/* LOGO Return to home page + scroll to top */}
-        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/" onClick={HandleLogoClick}>
           <Logo />
         </Link>
 
